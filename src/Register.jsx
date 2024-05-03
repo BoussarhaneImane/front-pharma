@@ -47,7 +47,7 @@ const Register = () => {
     };
 
     return (
-        <div className='ALL flex flex-col lg:flex-row'>
+        <div className='ALL flex flex-col lg:flex-row '>
             <div style={{ marginTop: '20px' }} className="container flex justify-center items-stretch w-full lg:w-[75%]">
                 <div className="text-section flex-1 bg-white rounded-l-xl p-3 ">
                     <img src={imgsrc} alt="Signup" className="h-full object-cover rounded-lg lg:rounded-none" />

@@ -4,8 +4,8 @@ import image2 from './appreil.png'; // Assurez-vous de remplacer l'URL de l'imag
 
 const Banner2 = ({ data }) => {
   return (
-    <div className="min-h-[550px] flex justify-center items-center py-2 m-0">
-      <div className="container  mx-auto mt-[-150px]">
+    <div className="min-h-[550px] flex justify-center items-center py-2 m-0 ">
+      <div className="container  mx-auto mt-[-120px]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center bg-white rounded-xl text-gray-900">
           {/* Left column for the title */}
           <div className="p-6 sm:p-8 col-span-2">

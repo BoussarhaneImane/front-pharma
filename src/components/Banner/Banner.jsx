@@ -38,7 +38,7 @@ const Banner = ({ data }) => {
             <img
               src={image}
               alt="Pharma Store"
-              className="w-[300px] md:w-[150px] mx-auto object-cover rounded-xl"
+              className="w-[100px] md:w-[150px] mx-auto object-cover rounded-xl mb-4 mt-[-40px]"
             />
           </div>
         </div>

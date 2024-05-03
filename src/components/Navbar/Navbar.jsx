@@ -44,7 +44,6 @@ const Navbar = ({ handleOrderPopup }) => {
           </div>
           <div className="hidden lg:flex items-center space-x-5">
             <Link to="/" className="text-white" id='nav-link'>Accueil</Link>
-           
             <Link to="/about" className="text-white" id='nav-link'>A propos</Link>
             <Link to="/shop" className="text-white" id='nav-link'>Produits</Link>
 
@@ -64,18 +63,16 @@ const Navbar = ({ handleOrderPopup }) => {
               </>
             )}
 
-           
-            <div className='w-28 text-xs'>
-              <Button
-                text="Contactez"
-                bgColor="bg-gray-900"
-                textColor="text-white"
-                handler={handleOrderPopup}
-              />
-            </div>
+            <Button
+              text="Contactez"
+              bgColor="bg-gray-900"
+              textColor="text-white"
+              handler={handleOrderPopup}
+              customClass="hidden lg:block" // Show button only on larger screens
+            />
           </div>
           <div className="flex lg:hidden">
-            <button onClick={toggleDropdown} className="text-green-700">
+            <button onClick={toggleDropdown} className="text-gray-900">
               {isDropdownOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
@@ -83,17 +80,19 @@ const Navbar = ({ handleOrderPopup }) => {
         {isDropdownOpen && (
           <div className="lg:hidden">
             <div className="ml-10 flex flex-col space-y-2">
-              <Link to="/" className="text-white">Accueil</Link>
-              
-              <Link to="/about" className="text-white">A propos</Link>
-              <Link to="/shop" className="text-white">Produits</Link>
-              <Link to="/contact" className="text-white">Contact</Link>
+              <Link to="/" className="text-white" >Accueil</Link>
+              <Link to="/about" className="text-white" >A propos</Link>
+              <Link to="/shop" className="text-white" >Produits</Link>
+              <Link to="/register" className="text-white" >S'inscrire </Link>
+              <Link to="/login" className="text-white" >Connexion </Link>
 
               <Button
-                text="Contact-Us"
+                text="Contact"
                 bgColor="bg-gray-900"
                 textColor="text-white"
                 handler={handleOrderPopup}
+                w="w-28"
+                ml="ml-40"
               />
             </div>
           </div>
