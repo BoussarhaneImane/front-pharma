@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Tesseract from 'tesseract.js';
-import CustomAlert from './CustomAlert'; 
+import { TbUrgent } from "react-icons/tb";
 import img1 from './components/d1.png'
 import img2 from './components/d2.png'
 import img3 from './components/d3.png'
@@ -167,16 +167,17 @@ const ShopPage = () => {
     const file = e.target.files[0];
     const { data: { text } } = await Tesseract.recognize(file);
     const motsCles = ['ORDONNANCE', 'ordonnance', 'médecin', 'patient', 'date'];
-    const estOrdonnance = motsCles.every(motCle => text.includes(motCle));
-
+    const estOrdonnance = motsCles.some(motCle => text.includes(motCle));
+  
     if (estOrdonnance) {
       setAlertMessage("Le document semble être une ordonnance, c'est bon.");
     } else {
       setAlertMessage('Le document ne semble pas être une ordonnance.');
     }
-
+  
     setPrescriptionFile(file);
   };
+  
 
   const handlePayment = () => {
     if (username) {
@@ -189,7 +190,11 @@ const ShopPage = () => {
   return (
     <div className="container mx-auto py-8 px-4 text-gray-900">
       <h1 className="text-2xl font-bold mb-4 text-gray-800">Bienvenue dans notre Pharma Store</h1>
-      {alertMessage && <CustomAlert message={alertMessage} />} 
+      {alertMessage && (
+        <div className=" bg-red-500 text-white p-2 mb-4 rounded-lg w-52 text-xs">
+          <TbUrgent size={25} className='ml-2'/> {alertMessage}
+        </div>
+      )} 
       <div className="mb-4">
         <input
           id="border"
